@@ -1,0 +1,18 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 10px 15px 19px -4px #ffffff;
+  border: 2px #2c2a2b;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.percent-text {
+  margin-bottom: 0;
+}
+
+.container-feedback {
+  margin-bottom: 20px;
+}
