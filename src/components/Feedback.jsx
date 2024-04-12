@@ -1,18 +1,15 @@
-const Feedback = ({ feedbackTypes, totalFeedback }) => {
-    const positivePercentage = Math.round(
-      ((feedbackTypes.good + feedbackTypes.neutral) / totalFeedback) * 100
-    );
-    return (
-      <div className="container-options">
-        <h2>Feedback Statistics</h2>
-  
-        <p>Good: {feedbackTypes.good}</p>
-        <p>Neutral: {feedbackTypes.neutral}</p>
-        <p>Bad: {feedbackTypes.bad}</p>
-        <p>Total Feedback: {totalFeedback}</p>
-        <p>Positive Percentage: {positivePercentage}%</p>
-      </div>
-    );
-  };
-  
-  export default Feedback;
+import css from "./Feedback.module.css";
+
+const Feedback = ({ feedback, posFeedback, totalFeedback }) => {
+  return (
+    <div className={css.feedbackContainer}>
+      <span className={css.feedbackText}>Good:{feedback.good}</span>
+      <span className={css.feedbackText}>Neutral:{feedback.neutral}</span>
+      <span className={css.feedbackText}>Bad:{feedback.bad}</span>
+      <span className={css.feedbackText}>Total point:{totalFeedback}</span>
+      <span className={css.feedbackText}>Percentage of reviews:{posFeedback}%</span>
+    </div>        
+  );
+};
+
+export default Feedback

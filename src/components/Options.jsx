@@ -1,14 +1,16 @@
-const Options = ({ updateFeedback, totalFeedback, resetFeedback }) => {
-    return (
-      <div className="container-options">
-        <h2>Leave Your Feedback</h2>
-        <button onClick={() => updateFeedback("good")}>Good 👍</button>
-        <button onClick={() => updateFeedback("neutral")}>Neutral 😐</button>
-        <button onClick={() => updateFeedback("bad")}>Bad 👎</button>
+import css from "./Options.module.css";
   
-        {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
-      </div>
-    );
-  };
+  const Options = ({ updateFeedback, resetFeedback, totalFeedback }) => {
+      return (
+        <div className={css.buttonContainer}>
+             <button className={css.optionsButton} onClick={() => updateFeedback("good")}>Good</button>
+        <button className={css.optionsButton} onClick={() => updateFeedback("neutral")}>Neutral</button>
+          <button className={css.optionsButton} onClick={() => updateFeedback("bad")}>Bad</button>
+          {totalFeedback > 0 && (
+            <button className={css.optionsButton} onClick={() => resetFeedback("reset")}>Reset</button>
+        )}  
+        </div>      
+    )
+  }
   
-  export default Options;
+  export default Options
