@@ -1,6 +1,6 @@
 import css from "./Notification.module.css";
 
-const Notifications = () => {
+const Notification = () => {
     return (
         <div className={css.noFeedbackContainer}>
             <span className={css.noFeedbackText}>No feedback yet</span>
@@ -8,4 +8,4 @@ const Notifications = () => {
     );
 };
 
-export default Notifications
+export default Notification

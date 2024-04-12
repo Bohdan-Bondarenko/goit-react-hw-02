@@ -1,7 +1,7 @@
 import Description from "./Description";
 import Options from "./Options";
 import Feedback from "./Feedback";
-import Notifications from "./Notification";
+import Notification from "./Notification";
 import './App.css';
 import { useEffect, useState } from "react";
 
@@ -21,8 +21,8 @@ const App = () => {
     setFeedback({ good: 0, neutral: 0, bad: 0 });
   };
 
-  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
-  const posFeedback = Math.round(((feedback.good + feedback.neutral) / totalFeedback) * 100);
+  const totalFeedback = feedback.good + feedback.bad;
+  const posFeedback = Math.round(( feedback.good / totalFeedback ) * 100);
 
   useEffect(() => {
     localStorage.setItem("feedbackValue", JSON.stringify(feedback));
@@ -43,7 +43,7 @@ const App = () => {
           posFeedback={posFeedback}
         />
       )}
-      {totalFeedback === 0 && <Notifications/>}
+      {totalFeedback === 0 && <Notification/>}
     </>
   );
 };
