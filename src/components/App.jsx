@@ -21,7 +21,7 @@ const App = () => {
     setFeedback({ good: 0, neutral: 0, bad: 0 });
   };
 
-  const totalFeedback = feedback.good + feedback.bad;
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const posFeedback = Math.round(( feedback.good / totalFeedback ) * 100);
 
   useEffect(() => {
